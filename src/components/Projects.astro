@@ -1,6 +1,10 @@
 ---
 import GitHub from "./icons/GitHub.astro"
 import NextJS from "./icons/NextJS.astro"
+import Flutter from "./icons/Flutter.astro"
+import Firebase from "./icons/Firebase.astro"
+import React from "./icons/React.astro"
+import Vite from "./icons/Vite.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
@@ -16,25 +20,64 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  FLUTTER:{
+    name: "Flutter",
+    class: "bg-[#003159] text-white",
+    icon: Flutter,
+  },
+  FIREBASE:{
+    name: "Firebase",
+    class: "bg-[#ffa000]/10 text-white",
+    icon: Firebase
+  },
+  REACT:{
+    name: "React",
+    class: "bg-[#003159] text-white",
+    icon: React
+  },
+  VITE:{
+    name: "Vite",
+    class: "bg-[#854bc8]/20 text-white",
+    icon: Vite
+  }
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "SUZUMAKUKAR - Una app de cursos",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
+      "App de matematicas para estudiantes de primaria. Esta hecha con flutter y firebase, aplicando los principios de arquitecturas limpias, mvvm, inyeccion de dependencias y providers.",
+    link: "",
+    github: "https://github.com/JeiFB/suzumakukar",
     image: "/projects/szm.png",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.FLUTTER, TAGS.FIREBASE],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "GameSocial - Red Social para gamers",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Red social para videojuegos, creada con flutter y firebase, aplicando arquitecturas limpias, patrones de diseño, mvvm y providers.",
+    link: "",
+    github: "https://github.com/JeiFB/gamesocial",
+    image: "/projects/gs.png",
+    tags: [TAGS.FLUTTER, TAGS.FIREBASE],
   },
+  {
+    title: "Veterinaria - Software de administracion de citas",
+    description:
+      "Este software se realizo para una veterinaria local de mi ciudad para organizar y gestionar citas. Esta realziado con React, vite y tailwind.",
+    link: "https://citasveterinariareactjeifher.netlify.app/",
+    github: "https://github.com/JeiFB/citas-react",
+    image: "/projects/vt.png",
+    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.VITE],
+  },
+  {
+    title: "Control de gastos - Software para planificar los gatos",
+    description:
+      "Este software realizado para uso personal surge de la necesidad de una herramienta para controlar mis gastos mensuales, buscaba algo sencillo y visualmente bonito. Esta hecho con react y vite ",
+    link: "https://citasveterinariareactjeifher.netlify.app/",
+    github: "https://github.com/JeiFB/citas-react",
+    image: "/projects/gt.png",
+    tags: [TAGS.REACT, TAGS.VITE],
+  }
 ]
 ---
 
