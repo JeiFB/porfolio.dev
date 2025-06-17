@@ -1,0 +1,58 @@
+---
+const CERTIFICATES = [
+  {
+    title: "Certificado Laboral Pragma S.A",
+    image: "/certificado-laboral.jpg",
+    description: "Certificado de experiencia laboral en Pragma S.A como desarrollador de software."
+  }
+];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {CERTIFICATES.map((cert, idx) => (
+    <div class="relative">
+      <button 
+        class="w-full cursor-pointer bg-gray-200/90 dark:bg-gray-700/70 rounded-xl shadow-lg p-8 flex flex-col items-center justify-center hover:scale-105 transition border border-gray-300/60 dark:border-gray-600/40"
+        data-modal-btn={`modal-cert-${idx}`}
+        type="button"
+      >
+        <span class="text-2xl font-bold mb-2 text-gray-800 dark:text-yellow-200">{cert.title}</span>
+        <span class="text-gray-700 dark:text-gray-200 text-base text-center">{cert.description}</span>
+      </button>
+      <div 
+        id={`modal-cert-${idx}`} 
+        class="hidden fixed inset-0 z-50 items-center justify-center bg-black/70"
+      >
+        <div class="relative">
+          <button 
+            class="absolute top-2 right-2 bg-white rounded-full px-2 py-1 text-black font-bold shadow-lg"
+            data-modal-close={`modal-cert-${idx}`}
+            type="button"
+          >✕</button>
+          <img src={cert.image} alt={cert.title} class="max-h-[95vh] max-w-[98vw] rounded-lg shadow-2xl border-4 border-white" />
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-modal-btn]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modalId = btn.getAttribute('data-modal-btn');
+        const modal = document.getElementById(modalId);
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      });
+    });
+    document.querySelectorAll('[data-modal-close]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modalId = btn.getAttribute('data-modal-close');
+        const modal = document.getElementById(modalId);
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      });
+    });
+  });
+</script>
