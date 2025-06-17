@@ -1,5 +1,6 @@
 ---
 import LinkInline from "./LinkInline.astro"
+import Badge from "./Badge.astro"
 
 interface Props {
   title: string
@@ -28,6 +29,21 @@ const { title, company, description, link, date } = Astro.props
   </div>
   <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
     {description}
+    <div class="flex flex-wrap gap-2 mt-2">
+      <Badge>Java</Badge>
+      <Badge>Spring Boot</Badge>
+      <Badge>WebFlux</Badge>
+      <Badge>Arquitectura Hexagonal</Badge>
+      <Badge>Microservicios</Badge>
+      <Badge>AWS</Badge>
+      <Badge>Terraform</Badge>
+      <Badge>Node.js</Badge>
+      <Badge>TypeScript</Badge>
+      <Badge>React.js</Badge>
+      <Badge>SQL/NoSQL</Badge>
+      <Badge>GitLab CI/CD</Badge>
+      <Badge>Zapier</Badge>
+    </div>
     {
       link && (
         <LinkInline href={link}>
@@ -44,10 +60,10 @@ const { title, company, description, link, date } = Astro.props
             stroke-linecap="round"
             stroke-linejoin="round"
           >
-            <>
+            <div>
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M9 6l6 6l-6 6" />
-            </>
+            </div>
           </svg>
         </LinkInline>
       )
